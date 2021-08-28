@@ -1,2 +1,2 @@
 # Radionewify
-You can find the website att https://radionewify.com/
+You can find the website at https://radionewify.com/
