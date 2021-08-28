@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Radionewify | Only music you've never listened to before</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://cdn.glitch.com/e96c68eb-6d07-4032-b610-d51e3c48bba0%2Fradionewify.png?v=1626085987274"
+    />
+<meta property="og:image" content="https://cdn.glitch.com/c23015a0-36de-4204-9cb2-288a2d37ed05%2F2021-08-11%20(1).png?v=1628692961636" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M61DMCWT6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M61DMCWT6D');
+</script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <link rel="stylesheet" href="main.css" />
+        <h1 style="font-size: 45px;">Radionewify</h1>
+        <h3 style="font-size: 28px;">
+          Only music you've never listened to before
+        </h3>
+        <p>
+          <img
+            src="https://cdn.glitch.com/e96c68eb-6d07-4032-b610-d51e3c48bba0%2Fradionewify%20-%20Copy.png?v=1626086127149"
+            width="130"
+            height="130" style="margin:15px 15px 15px 15px"
+          />
+        </p>
+        <p style="font-size: 18px;">
+          Create a Spotify playlist with ~100 recommendations based on...
+        </p>        <p class="promptmessage" style="font-size: 15px !important; font-style:italic; font-weight:normal !important; display:none;">
+          You'll be prompted to connect to Spotify when you create your first radio
+        </p><div style="display:inline">
+          <input id="app" type="radio"  name="appbrowser" onclick="appbrowserFunc()" value="app" checked="checked">
+          <label for="appbrowser" style="color:white; white-space: pre; font-size:15px; font-style:italic;">Open in app </label>
+        </div>
+        <div style="display:inline">
+          <input id="browser" type="radio" onclick="appbrowserFunc()" name="appbrowser" value="browser"
+                 >
+          <label for="appbrowser" style="color:white; font-size:15px; font-style:italic;" >Open in browser</label>
+        </div>
+                <br style="display: block; content: ''; margin-top: 4px;">
+        <p style="font-size: 18px; display: inline; white-space: pre;">Your most recently played:</p>
+                        <br class="newlinehide" style="display: none; content: ''; margin-bottom:0px !important;">
+
+        <a
+          href="?track" 
+          class="btn btn-primary" style="margin-left:1px !important; margin-bottom: 8px;"
+          >Track</a
+        >
+        <a
+          href="?artist"
+          class="btn btn-primary" style="margin-bottom: 8px;"
+          >Artist</a
+        >
+        <a
+          href="?playlist"
+          class="btn btn-primary" style="margin-bottom: 8px;"
+          >Playlist</a>
+        <br style="display: block; content: ''; margin-top: 8px;">
+<!--<br style="display: block; content: ''; margin-bottom:13px !important;">-->
+                      <label style="font-size: 18px; font-weight:900; " for="genres">A genre:</label>
+<select id="genres" onclick="saveGenreFunc()" style="background-color:white; color:black; font-size: 15px; font-weight:400; border: 2px solid white; border-radius:2px;">
+  <option value="Acoustic">Acoustic</option>
+<option value="Afrobeat">Afrobeat</option>
+<option value="Alt rock">Alt rock</option>
+<option value="Alternative">Alternative</option>
+<option value="Ambient">Ambient</option>
+<option value="Anime">Anime</option>
+<option value="Black metal">Black metal</option>
+<option value="Bluegrass">Bluegrass</option>
+<option value="Blues">Blues</option>
+<option value="Bossanova">Bossanova</option>
+<option value="Brazil">Brazil</option>
+<option value="Breakbeat">Breakbeat</option>
+<option value="British">British</option>
+<option value="Cantopop">Cantopop</option>
+<option value="Chicago house">Chicago house</option>
+<option value="Children">Children</option>
+<option value="Chill">Chill</option>
+<option value="Classical">Classical</option>
+<option value="Club">Club</option>
+<option value="Comedy">Comedy</option>
+<option value="Country">Country</option>
+<option value="Dance">Dance</option>
+<option value="Dancehall">Dancehall</option>
+<option value="Death metal">Death metal</option>
+<option value="Deep house">Deep house</option>
+<option value="Detroit techno">Detroit techno</option>
+<option value="Disco">Disco</option>
+<option value="Disney">Disney</option>
+<option value="Drum and bass">Drum and bass</option>
+<option value="Dub">Dub</option>
+  <option value="Dubstep">Dubstep</option>
+<option value="Edm">Edm</option>
+<option value="Electro">Electro</option>
+<option value="Electronic">Electronic</option>
+<option value="Emo">Emo</option>
+<option value="Folk">Folk</option>
+<option value="Forro">Forro</option>
+<option value="French">French</option>
+<option value="Funk">Funk</option>
+<option value="Garage">Garage</option>
+<option value="German">German</option>
+<option value="Gospel">Gospel</option>
+<option value="Goth">Goth</option>
+<option value="Grindcore">Grindcore</option>
+<option value="Groove">Groove</option>
+<option value="Grunge">Grunge</option>
+<option value="Guitar">Guitar</option>
+<option value="Happy">Happy</option>
+<option value="Hard rock">Hard rock</option>
+<option value="Hardcore">Hardcore</option>
+<option value="Hardstyle">Hardstyle</option>
+<option value="Heavy metal">Heavy metal</option>
+<option value="Hip hop">Hip hop</option>
+<option value="Holidays">Holidays</option>
+<option value="Honky tonk">Honky tonk</option>
+<option value="House">House</option>
+<option value="Idm">Idm</option>
+<option value="Indian">Indian</option>
+<option value="Indie">Indie</option>
+<option value="Indie pop">Indie pop</option>
+<option value="Industrial">Industrial</option>
+<option value="Iranian">Iranian</option>
+<option value="J dance">J dance</option>
+<option value="J idol">J idol</option>
+<option value="J pop">J pop</option>
+<option value="J rock">J rock</option>
+<option value="Jazz">Jazz</option>
+<option value="K pop">K pop</option>
+  <option value="Kids">Kids</option>
+<option value="Latin">Latin</option>
+<option value="Latino">Latino</option>
+<option value="Malay">Malay</option>
+<option value="Mandopop">Mandopop</option>
+<option value="Metal">Metal</option>
+<option value="Metal misc">Metal misc</option>
+<option value="Metalcore">Metalcore</option>
+<option value="Minimal techno">Minimal techno</option>
+<option value="Movies">Movies</option>
+<option value="Mpb">Mpb</option>
+<option value="New age">New age</option>
+<option value="New release">New release</option>
+<option value="Opera">Opera</option>
+<option value="Pagode">Pagode</option>
+  <option value="Party">Party</option>
+<option value="Philippines opm">Philippines opm</option>
+<option value="Piano">Piano</option>
+<option value="Pop">Pop</option>
+<option value="Pop film">Pop film</option>
+<option value="Post dubstep">Post dubstep</option>
+<option value="Power pop">Power pop</option>
+<option value="Progressive house">Progressive house</option>
+<option value="Psych rock">Psych rock</option>
+<option value="Punk">Punk</option>
+<option value="Punk rock">Punk rock</option>
+<option value="R-n-b">R-n-b</option>
+<option value="Rainy day">Rainy day</option>
+<option value="Reggae">Reggae</option>
+<option value="Reggaeton">Reggaeton</option>
+  <option value="Road trip">Road trip</option>
+<option value="Rock">Rock</option>
+<option value="Rock-n-roll">Rock-n-roll</option>
+<option value="Rockabilly">Rockabilly</option>
+<option value="Romance">Romance</option>
+<option value="Sad">Sad</option>
+<option value="Salsa">Salsa</option>
+<option value="Samba">Samba</option>
+<option value="Sertanejo">Sertanejo</option>
+<option value="Show tunes">Show tunes</option>
+<option value="Singer songwriter">Singer songwriter</option>
+<option value="Ska">Ska</option>
+<option value="Sleep">Sleep</option>
+<option value="Songwriter">Songwriter</option>
+<option value="Soul">Soul</option>
+<option value="Soundtracks">Soundtracks</option>
+<option value="Spanish">Spanish</option>
+<option value="Study">Study</option>
+<option value="Summer">Summer</option>
+<option value="Swedish">Swedish</option>
+<option value="Synth pop">Synth pop</option>
+<option value="Tango">Tango</option>
+<option value="Techno">Techno</option>
+<option value="Trance">Trance</option>
+<option value="Trip hop">Trip hop</option>
+<option value="Turkish">Turkish</option>
+<option value="Work out">Work out</option>
+<option value="World music">World music</option>
+</select>
+
+                <a
+                href="?genre"
+                onclick="realGenreFunc();"
+          class="btn btn-primary" style="margin-bottom:7px !important; margin-left:1px;"
+          >Create genre radio</a
+        >
+        <br style="display: block; content: ''; margin-bottom:8px !important;"><p style="font-size: 18px;  display:inline;">Your 5 most played tracks during the last:</p>
+                        <br class="newlinehide" style="display: none; content: ''; margin-top: 4px;">
+        <a href="?month"class="btn btn-primary"style="margin-bottom:5px !important; margin-top:2px !important">Month</a>
+<a href="?6months"class="btn btn-primary"style="margin-bottom:5px !important; margin-top:2px !important;">6 months</a>
+<a href="?alltime"class="btn btn-primary"style="margin-bottom:5px !important; margin-top:2px !important;">All time</a>
+               <br style="display: block; content: ''; margin-bottom:8px !important;">
+        <button
+          id="myBtn"
+          class="button myBtnClass"
+          style="font-size: 18px;  background-color: #121212; border-color:white; border-radius: 5px;  border-style: solid; padding:5px 8px; margin-bottom:1px; margin-top:1px;"
+        >
+                    Parameters
+
+        </button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form style="color:white; text-align:left; font-size:medium !important;">
+              <p style="font-weight:normal !important; font-size:medium !important;">
+    These are the parameters for Spotify's <a
+      href="https://developer.spotify.com/console/get-recommendations/" target=”_blank”
+      >Get Recommendations API</a
+    >, which this app is based on.<br /><br />Specifying the target-values below will bring the closest matches to the beginning of the generated radio. Min- and max-values will exclude songs which don't fit the criteria (and could shorten the radio).<br /><br />Note that the only parameter (of the ones below) the app uses a preset value for is "max popularity"; all other are undefined unless you change them. Also note that changing them will often not give meaningful results, and that they reset after each generated radio.
+  </p><br style="display: block; content: ''; margin-top: 20px;">
+                      <p>
+            Popularity (default: 60)
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="popularity" oninput="changeFunc('popularity'); apiParameters(); " value="Min">
+            <label for="Min" style="color:white; white-space:pre;"> Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="popularity" oninput="changeFunc('popularity'); apiParameters(); " value="Max" checked="checked"
+                   >
+            <label for="Max" style="color:white;" > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="popularity" oninput="changeFunc('popularity'); apiParameters(); " value="Target">
+            <label for="Target" style="color:white;"> Target </label>
+          </div>
+                        <div style="display:inline">
+            <input type="radio"  name="popularity" oninput="undefinedFunc('popularity'); apiParameters(); " value="Undefined">
+            <label for="Undefined" style="color:white;"> Undefined </label>
+          </div>
+<input type="range" value="60" style="background: #1ed760;" min="0" max="100" class="config popularity" oninput="this.nextElementSibling.value = this.value; changeFunc('popularity'); apiParameters();">
+<output style="color:white; display:inline !important;">60</output>
+                                  <p>
+            Valence (positivity)
+          </p>
+          <div style="display:inline">
+            <input type="radio" name="valence" oninput="changeFunc('valence'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="valence" oninput="changeFunc('valence'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="valence" oninput="changeFunc('valence'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+                        <div style="display:inline">
+            <input type="radio"  name="valence" oninput="undefinedFunc('valence'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config valence" oninput="this.nextElementSibling.value = this.value;  changeFunc('valence'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Tempo (BPM)
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="tempo" oninput="changeFunc('tempo'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="tempo" oninput="changeFunc('tempo'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="tempo" oninput="changeFunc('tempo'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+                        <div style="display:inline">
+            <input type="radio"  name="tempo" oninput="undefinedFunc('tempo'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" value="undefined" min="60" max="180" class="config tempo" oninput="this.nextElementSibling.value = this.value; bpmChange();  changeFunc('tempo'); apiParameters();" >
+<output class="bpm" >120BPM</output>
+                                  <p >
+            Acousticness
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="acousticness" oninput="changeFunc('acousticness'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="acousticness" oninput="changeFunc('acousticness'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="acousticness" oninput="changeFunc('acousticness'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+                        <div style="display:inline">
+            <input type="radio"  name="acousticness" oninput="undefinedFunc('acousticness'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config acousticness" oninput="this.nextElementSibling.value = this.value; changeFunc('acousticness'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Danceability
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="danceability" oninput="changeFunc('danceability');apiParameters();" value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="danceability" oninput="changeFunc('danceability'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="danceability" oninput="changeFunc('danceability'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+                                      <div style="display:inline">
+            <input type="radio"  name="danceability" oninput="undefinedFunc('danceability'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config danceability" oninput="this.nextElementSibling.value = this.value; changeFunc('danceability'); apiParameters(); " >
+<output >0.5</output>
+
+                                  <p >
+            Energy
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="energy" oninput="changeFunc('energy'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="energy" oninput="changeFunc('energy'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="energy" oninput="changeFunc('energy'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+              </div>
+             <div style="display:inline">
+            <input type="radio"  name="energy" oninput="undefinedFunc('energy'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config energy" oninput="this.nextElementSibling.value = this.value;  changeFunc('energy'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Instrumentalness (lack of vocals, excluding "ooh" and "aah" sounds)
+          </p>
+          <div style="display:inline">
+            <input type="radio" id="instrumentalness" name="instrumentalness" oninput="changeFunc('instrumentalness'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="instrumentalness" oninput="changeFunc('instrumentalness'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="instrumentalness" oninput="changeFunc('instrumentalness'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+                           <div style="display:inline">
+            <input type="radio"  name="instrumentalness" oninput="undefinedFunc('instrumentalness'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config instrumentalness" oninput="this.nextElementSibling.value = this.value;  changeFunc('instrumentalness'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Key (min/max excludes all to the right/left)
+          </p>
+          <div style="display:inline">
+            <input type="radio" id="key" name="key" oninput="changeFunc('key'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="key" oninput="changeFunc('key'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="key" oninput="changeFunc('key'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div> <div style="display:inline">
+            <input type="radio"  name="key" oninput="undefinedFunc('key'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div><hr style="margin-top: 5px; margin-bottom: 10px; width:285px;margin-left:0;">
+              <div style="display:inline">
+  <input type="radio" id="C" name="drone" oninput="changeFunc('key'); apiParameters(); " value="0"
+          >
+  <label for="C"  > C </label>
+</div>
+
+<div style="display:inline">
+  <input type="radio" id="C#/Db" name="drone" oninput="changeFunc('key'); apiParameters();" value="1">
+  <label for="C#/Db" > C#/Db </label>
+</div>
+                            <div style="display:inline">
+  <input type="radio" id="D" name="drone" oninput="changeFunc('key'); apiParameters(); " value="2"
+         >
+  <label for="D"  > D </label>
+</div>
+<br />
+<div style="display:inline">
+  <input type="radio" id="D#/Eb" name="drone" oninput=" changeFunc('key'); apiParameters();" value="3">
+  <label for="D#/Eb" > D#/Eb </label>
+</div>
+                            <div style="display:inline">
+  <input type="radio" id="E" name="drone" oninput=" changeFunc('key'); apiParameters();" value="4"
+         >
+  <label for="E"  > E </label>
+</div>
+
+<div style="display:inline">
+  <input type="radio" id="F" name="drone" oninput=" changeFunc('key'); apiParameters();" value="5">
+  <label for="F" > F </label>
+</div>
+              <br />
+              <div style="display:inline">
+  <input type="radio" id="F#/Gb" name="drone" oninput=" changeFunc('key'); apiParameters();" value="6">
+  <label for="F#/Gb" > F#/Gb </label>
+</div>
+              <div style="display:inline">
+  <input type="radio" id="G" name="drone" oninput=" changeFunc('key'); apiParameters();" value="7">
+  <label for="G" > G </label>
+</div>
+              <div style="display:inline">
+  <input type="radio" id="G#/Ab" name="drone" oninput=" changeFunc('key'); apiParameters();" value="8">
+  <label for="G#/Ab" > G#/Ab </label>
+</div>
+              <br />
+              <div style="display:inline">
+  <input type="radio" id="A" name="drone" oninput="changeFunc('key'); apiParameters();" value="9">
+  <label for="A" > A </label>
+</div>
+              <div style="display:inline">
+  <input type="radio" id="A#/Bb" name="drone" oninput="changeFunc('key'); apiParameters(); " value="10">
+  <label for="A#/Bb" > A#/Bb </label>
+</div>
+                            <div style="display:inline">
+  <input type="radio" id="B" name="drone" oninput=" changeFunc('key'); apiParameters();" value="11">
+  <label for="B" > B </label>
+</div>                <br style="display: block; content: ''; margin-top: 15px;">
+
+                                                <p >
+            Liveness (>0.8 = likely live)
+          </p>
+          <div style="display:inline">
+            <input type="radio" name="liveness" oninput="changeFunc('liveness'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="liveness" oninput="changeFunc('liveness'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="liveness" oninput="changeFunc('liveness'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+              <div style="display:inline">
+            <input type="radio"  name="liveness" oninput="undefinedFunc('liveness'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config liveness" oninput="this.nextElementSibling.value = this.value; changeFunc('liveness'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Loudness (dB)
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="loudness" oninput="changeFunc('loudness'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="loudness" oninput="changeFunc('loudness'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="loudness" oninput="apiParameters();changeFunc('loudness');" value="Target">
+            <label for="Target" > Target </label>
+          </div>
+              <div style="display:inline">
+            <input type="radio"  name="loudness" oninput="undefinedFunc('loudness'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" value="undefined" min="-20" max="0" class="config loudness" oninput="this.nextElementSibling.value = this.value; dBParameter(); changeFunc('loudness'); apiParameters();" >
+<output class="decibels" >-10dB</output>
+                                  <p >
+            Mode
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="modehmm" oninput="changeFunc('mode'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="modehmm" oninput="changeFunc('mode'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="modehmm" oninput="changeFunc('mode'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div><div style="display:inline">
+            <input type="radio"  name="modehmm" oninput="undefinedFunc('mode'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div><hr style="margin-top: 5px; margin-bottom: 10px; width:285px;margin-left:0;">
+<div style="display:inline">
+  <input type="radio" id="Major" name="mode" oninput="changeFunc('mode'); apiParameters();" value="Major"
+         >
+  <label for="Major"  > Major </label>
+</div>
+
+<div style="display:inline">
+  <input type="radio" id="Minor" name="mode" oninput=" changeFunc('mode'); apiParameters();" value="Minor">
+  <label for="Minor" > Minor</label>
+</div>                             <br style="display: block; content: ''; margin-top: 15px;">     <p >
+            Speechiness (>0.66 = likely just talking, 0.33-0.66 = likely rap)
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="speechiness" oninput="changeFunc('speechiness'); apiParameters(); " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="speechiness" oninput="changeFunc('speechiness'); apiParameters(); " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="speechiness" oninput="changeFunc('speechiness'); apiParameters(); " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+              <div style="display:inline">
+            <input type="radio"  name="speechiness" oninput="undefinedFunc('speechiness'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+<input type="range" step="0.01" value="undefined" min="0" max="1" class="config speechiness" oninput="this.nextElementSibling.value = this.value; changeFunc('speechiness'); apiParameters();" >
+<output >0.5</output>
+                                  <p >
+            Time signature (beats per bar)
+          </p>
+          <div style="display:inline">
+            <input type="radio"  name="time signature" oninput="changeFunc('time signature'); apiParameters();  " value="Min">
+            <label for="Min" > Min </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio"  name="time signature" oninput="changeFunc('time signature'); apiParameters();  " value="Max"
+                   >
+            <label for="Max"  > Max </label>
+          </div>
+          <div style="display:inline">
+            <input type="radio" name="time signature" oninput="changeFunc('time signature'); apiParameters();  " value="Target">
+            <label for="Target" > Target </label>
+          </div>
+              <div style="display:inline">
+            <input type="radio"  name="time signature" oninput="undefinedFunc('time signature'); apiParameters(); " value="Undefined" checked="checked">
+            <label for="Undefined" > Undefined </label>
+          </div>
+          <input style="margin-bottom: 0px;" type="range" step="1" value="undefined" min="1" max="9" class="config time signature" oninput="this.nextElementSibling.value = this.value; changeFunc('time signature'); apiParameters();" >
+          <output >5</output>
+              </form>
+          </div>
+        </div>
+        <button
+          id="myBtn"
+          class="button myBtnClass"
+          style="font-size: 18px;  background-color: #121212; border-color:white; border-radius: 5px;  border-style: solid; padding:5px 8px;  margin-bottom:1px; margin-top:1px;"
+        >Options
+        </button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form style=" text-align:left; font-size:medium !important;">
+            <p
+              style="text-align:left;  font-size: medium;"
+            >Autoplay (start playing the radio's first track automatically)</p>
+            <div style="display:inline">
+              <input type="radio" id="autoplayon" onclick="autoplayFunc()" name="autoplay" value="autoplayon" checked="checked">
+              <label for="Min" style="white-space: pre; font-size:15px !important;"> On </label>
+            </div>
+            <div style="display:inline">
+              <input type="radio" id="autoplayoff" onclick="autoplayFunc()" name="autoplay" value="autoplayoff"
+                     >
+              <label for="Max" style="font-size:15px !important;" > Off</label>
+            </div>
+          </form>
+          </div>
+        </div>
+        <button
+          id="myBtn"
+          class="button myBtnClass"
+          style="font-size: 18px;  background-color: #121212; border-color:white; border-radius: 5px;  border-style: solid; padding:5px 8px; margin-bottom:1px; margin-top:1px;"
+        >
+           About
+        </button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p
+              style="text-align:left; font-size: medium; font-weight:400;"
+            >
+              Playlists should be for saving songs, radio should be for
+              discovery. <br /><br />Spotify's radio algorithm traps you in a
+              narrow musical space where they torture you with the same 50
+              tracks over and over again. Their curated playlists are just tired
+              old songs reimagined in a different order, and finding a
+              playlist-creator with good taste is a entire journey in itself.
+              Radionewify provides an alternative. <br /><br /><b>"Never listened
+              to before" means "never any song that is...":</b>
+            </p>
+
+            <ol
+              style="text-align:left; font-size: medium; font-weight:400;"
+            >
+              <li>In your playlists (except for the radio(s) generated immediately after you log in  — it takes time to extract all the tracks. There's also a limit of 100 000 tracks, to keep my database from crashing)</li>
+              <li>In your 'liked songs'</li>
+              <li>One of the 50 most recently played</li>
+              <li>
+                One of the 50 most listened to long-, medium-, and short-term
+              </li>
+              <li>Played since you've connected to this app</li>
+            </ol>
+            <br />
+            <p
+              style="text-align:left; font-size: medium; font-weight:400;"
+            >
+              The recommendations are also not based on your previous listening
+              patterns, and their "max popularity index" is 60.<br /><br />The
+              reason the app jumps through all of these convoluted hoops is that
+              Spotify doesn't provide the user's entire listening history.
+              <br /><br /><b>Note:</b> Radionewify works for both free and premium Spotify accounts — but it won't automatically start playing the generated radio for free accounts. (Spotify's API restriction, not my fault!)<br /><br
+            </p><b>Contact:</b> If you want to request a feature or think you've found a bug, feel free to contact me at <a class="link" href = "mailto: eliasedgren1@gmail.com">eliasedgren1@gmail.com</a>.
+            <br /><br /><b>Privacy policy: </b>All tracks in your playlists, most listened to, and most recently played are collected and saved in a database, which is used to determine what tracks to avoid.<br /><br />
+
+I also save your Spotify account ID and access token, which are needed to add the songs you've played since you connected to the app to the database.<br /><br />
+
+            I don't collect name, email, nor will publicly release or sell the data in any way. The database is private and password-locked.<br /><br />See the auto-generated "formal" privacy policy <a
+              href="https://development-radionewify.glitch.me/privacy.html" target=”_blank”
+              >here</a>.
+</div>
+        </div>
+        <button
+          id="myBtn"
+          class="button myBtnClass"
+          style="font-size: 18px;  background-color: #121212; border-color:white; border-radius: 5px;  border-style: solid; padding:5px 8px;  margin-bottom:1px; margin-top:1px;"
+        >Import Last.fm/streaming service history
+        </button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p
+              style="text-align:left; font-size: medium; font-weight:400;"
+            >
+            After you've created your first radio you can make Radionewify avoid all tracks you've scrobbled with <a
+              href="https://www.last.fm/" target=”_blank”
+              >Last.fm</a>. Just:
+            <ol
+              style="text-align:left; font-size: medium; font-weight:400;"
+            >
+              <li>Go to <a
+                href="https://www.tunemymusic.com/#step2" target=”_blank”
+                >Tune My Music</a></li>
+                <!--<li>Click "Let's Start"</li>-->
+                <li>Select "last.fm"</li>
+              <li>Put in your Last.fm username</li>
+              <li>Uncheck "Artists" and "Top Albums"</li>
+              <li>Select "export to file"</li>
+              <li>Select "CSV" as format</li>
+              <!--<li>Click "Start moving my music"</li>-->
+              <!--<li>Wait until the file automatically downloads</li>-->
+              <br style="display: block; content: ''; margin-top: 8px;">
+              <li><label for="file-upload" class="custom-file-upload" style="border: 2px solid white; font-weight: bold; border-radius: 5px; display:inline; margin-top:5px !important; margin-bottom:5px !important; padding:3px;"> Import </label>
+                <input type="file" id="file-upload" accept=".csv" oninput="inputCSV();">
+            <p style="display:inline; margin-top:5px !important; margin-bottom: 5px !important; white-space: pre;"> </p> the downloaded file to Radionewify</li>
+<br class="hiddenbr" style="display: none;">
+<li class="filedisplay" style="display:none; margin-top:5px !important;"></li>
+            </ol>
+          <p style="text-align:left; font-size: medium; font-weight:400;"
+            >This method would probably work for all the other streaming services on Tune My Music as well. (With the exception of YouTube/YT Music, because YT doesn't cleanly separate track names from artist names.)</p>
+          </div>
+        </div>
+        <!--<button
+          id="myBtn"
+          class="button myBtnClass" onclick="window.open('https://patreon.com/radionewify');"
+          style="font-size: 18px;  background-color: #121212; border-color:white; border-radius: 5px;  border-style: solid; padding:5px 8px; margin-bottom:1px; margin-top:1px;"
+        >
+           Patreon
+        </button>-->
+        <br><br/>
+        <!--<script src="/socket.io/socket.io.js"></script>-->
+                 <script type="text/javascript" src="jquery-3.6.0.js"></script>
+        <script src="papaparse.js"></script>
+        <script src="main.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

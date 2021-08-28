@@ -1,0 +1,265 @@
+@font-face {
+    font-family: "Jakarta";
+    src: url("https://cdn.glitch.com/e96c68eb-6d07-4032-b610-d51e3c48bba0%2FPlusJakartaSans-Bold.woff?v=1626308409047") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Jakarta";
+    src: url("https://cdn.glitch.com/e96c68eb-6d07-4032-b610-d51e3c48bba0%2FPlusJakartaSans-Regular.woff?v=1626308550449") format('woff');
+}
+
+@font-face {
+    font-family: "Jakarta";
+    src: url("https://cdn.glitch.com/c23015a0-36de-4204-9cb2-288a2d37ed05%2FPlusJakartaSans-Italic.woff2?v=1627132531421") format('woff');
+    font-style: italic;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+body, html {
+    font-family:"Jakarta";
+  background-color: #121212;
+  text-align: center;
+  color:white;
+  font-weight:900;
+  height: 100%;
+}
+
+
+/*hr {text-align: center;
+width: calc(100% - 800px);
+min-width: 300px;
+max-width: 600px;
+border: none;
+height: 2px;
+color: white;
+background-color: white;
+}*/
+
+h1, h2, h3, h4, h5, h6 {
+
+  font-weight:900;
+
+}
+
+.config {
+  -webkit-appearance: none;
+  width: calc(100% - 67px) !important;
+  display:inline !important;
+  height: 7px;
+  border-radius: 5px;
+  background: #707070;
+  outline: none;
+  margin-bottom: 20px;
+  /*opacity: 0.7;*/
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.config:hover {
+  opacity: 1;
+  background: #1ed760;
+}
+
+.config::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.config::-moz-range-thumb {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+output {
+    display:inline;
+  font-weight: 400;
+}
+
+label {
+  font-weight: 400;
+  white-space: pre;
+}
+
+a[class="btn btn-primary"] {
+  font-size: 18px;
+  font-weight:900;
+  color:#121212;
+  background-color:#1ed760;
+  display: inline-block;
+  border:none;
+  margin:3px 0px 0px 0px;
+}
+
+a[class="btn btn-primary"]:hover {
+    background-color:#1ed760;
+  color: white !important;
+}
+
+a[class="btn btn-primary"]:focus {
+    background-color:#1ed760;
+  color: white !important;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #121212;
+  margin: auto; /* 15% from the top and centered */
+  position: relative;
+top: 50%;
+  max-height: 600px;
+    overflow: auto; /* Enable scroll if needed */
+font-family:'Jakarta';
+transform: translateY(-50%);
+  padding: 20px;
+  border: 2px solid;
+  width: 62%; /* Could be more or less, depending on screen size */
+}
+
+
+@media screen and (max-width: 800px) {
+  .modal-content{
+   width:90%;
+  }
+}
+
+@media screen and (max-width: 600px),
+       screen and (max-height: 650px) {
+             -webkit-text-size-adjust: none;
+  .modal-content{
+   width:90%;
+  }
+    a, p, button, label, ol {
+  font-size:medium !important;
+}
+         label[for="appbrowser"] {
+           font-size:13px !important;
+         }
+  h1 {
+    font-size: 33px !important;
+    margin-top: 11px !important;
+  }
+    h3 {
+          margin-top: 10px !important;
+    font-size: 20px !important;
+      margin-bottom: 6px !important;
+  }
+  img {
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 7px !important;
+  }
+}
+
+output {
+    font-size:medium !important;
+  color:white;
+}
+
+@media screen and (min-width: 500px) {
+.container {
+  display: flex;
+  overflow:auto;
+align-items: center;
+justify-content: center;
+height: 100%;
+}
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    color:black;
+    background-color:white;
+    border: 1px solid white;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  border-color: white;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color:black !important;
+  background-color:white !important;
+  border-color:white !important;
+}
+
+    input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: white;
+        content: '';
+        display: inline-block;
+        border: 2px solid white;
+    }
+
+
+    input[type='radio']:checked:after, input[type='radio']:hover:after {
+        background-color: #1ed760;
+    }
+
+    input[name='appbrowser']:after {
+        width: 13px;
+        height: 13px;
+    }
+
+    input[name='appbrowser']:checked:after, input[name='appbrowser']:hover:after {
+               width: 13px;
+        height: 13px;
+      background-color: #1ed760;
+    }
